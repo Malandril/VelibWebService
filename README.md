@@ -6,10 +6,12 @@
 - Cache
 
 ## Structure
-Cette solution contient 4 projets
+La solution se trouve dans le dossier Velib
+Cette solution contient 5 projets
 * Un Service Intermediaire SOAP qui consume le service REST de JCDecaux et qui expose un service SOAP pour récupérer des données de monitoring
 * Un projet console qui permet de hoster la librairie du service intermediaire
 * Un client WPF qui consumme le service SOAP intermediaire
+* Un client Console qui consumme le service SOAP intermediaire
 * Un client WPF qui permet d'afficher les données du monitoring
 
 ## Lancement
