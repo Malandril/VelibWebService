@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelibMonitoringClient", "Mo
 		{28888531-FFD8-44AA-B714-E52070F78604} = {28888531-FFD8-44AA-B714-E52070F78604}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelibConsoleClient", "VelibConsoleClient\VelibConsoleClient.csproj", "{9554DE7B-0F30-4C46-8EE9-F0CBEA711EB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2D07F946-B8F0-4BB2-BDE1-E76F533FF920}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D07F946-B8F0-4BB2-BDE1-E76F533FF920}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D07F946-B8F0-4BB2-BDE1-E76F533FF920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9554DE7B-0F30-4C46-8EE9-F0CBEA711EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9554DE7B-0F30-4C46-8EE9-F0CBEA711EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9554DE7B-0F30-4C46-8EE9-F0CBEA711EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9554DE7B-0F30-4C46-8EE9-F0CBEA711EB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
