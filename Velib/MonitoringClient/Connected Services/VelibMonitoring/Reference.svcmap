@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d393ff6a-a8e6-44ab-bca4-a16118108c4f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Monitoring" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Monitoring.xsd" MetadataType="Schema" ID="c609c40a-8d9e-49e5-8a85-f6f31d34cb9a" SourceId="1" SourceUrl="http://localhost:8733/Monitoring?xsd=xsd2" />
+    <MetadataFile FileName="Monitoring.wsdl" MetadataType="Wsdl" ID="7f731109-0a07-4ac4-91ff-ffd35d0a24c6" SourceId="1" SourceUrl="http://localhost:8733/Monitoring?wsdl" />
+    <MetadataFile FileName="Monitoring.disco" MetadataType="Disco" ID="4e5d84a6-f9fb-4c22-a5e9-39b523aa4dcb" SourceId="1" SourceUrl="http://localhost:8733/Monitoring?disco" />
+    <MetadataFile FileName="Monitoring1.xsd" MetadataType="Schema" ID="9a32be25-a662-4190-97f8-be88f92b12e3" SourceId="1" SourceUrl="http://localhost:8733/Monitoring?xsd=xsd1" />
+    <MetadataFile FileName="Monitoring2.xsd" MetadataType="Schema" ID="ea6e7347-2f4b-43e4-980e-931532f08935" SourceId="1" SourceUrl="http://localhost:8733/Monitoring?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

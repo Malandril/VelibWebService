@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace VelibClient
+namespace Velib
 {
     [DataContract]
     public class Station

@@ -1,36 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using VelibClient;
 
 namespace Velib
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "VelibIntermediary" in both code and config file together.
     public class VelibIntermediary : IVelibIntermediary
     {
-        public string GetData(int value)
-        {
-            return $"You entered : {value}";
-        }
-
+        private const string ApiKey = "d7cafd31e65fdec0da9453cdbc233b905518e399";
+        public static List<DateTime> DistantRequests = new List<DateTime>();
+        public static List<DateTime> Connections = new List<DateTime>();
 
         public async Task<List<Station>> GetStations(string city)
         {
+            Connections.Add(DateTime.Now);
+            List<Station> stations =
+                await Caching.GetObjectFromCache($"{city}Stations", 1, () => (RequestStations(city)));
+            return stations;
+        }
+
+        private async Task<List<Station>> RequestStations(string city)
+        {
+            DistantRequests.Add(DateTime.Now);
             WebRequest webRequest =
                 WebRequest.Create(
-                    $"https://api.jcdecaux.com/vls/v1/stations?contract={city}&apiKey=d7cafd31e65fdec0da9453cdbc233b905518e399");
+                    $"https://api.jcdecaux.com/vls/v1/stations?contract={city}&apiKey={ApiKey}");
             webRequest.Credentials = CredentialCache.DefaultCredentials;
 
             var response = await webRequest.GetResponseAsync();
-            Console.WriteLine(((HttpWebResponse) response).StatusDescription);
 
             Stream dataStream = response.GetResponseStream();
 
@@ -40,7 +39,6 @@ namespace Velib
 
             List<Station> stations = JsonConvert.DeserializeObject<List<Station>>(responseFromServer);
 
-            Console.WriteLine(responseFromServer);
             reader.Close();
             response.Close();
             return stations;
@@ -48,9 +46,17 @@ namespace Velib
 
         public async Task<List<Contract>> GetContracts()
         {
+            Connections.Add(DateTime.Now);
+            var contracts = await Caching.GetObjectFromCache("contracts", 10, RequestContracts);
+            return contracts;
+        }
+
+        private async Task<List<Contract>> RequestContracts()
+        {
+            DistantRequests.Add(DateTime.Now);
             WebRequest webRequest =
                 WebRequest.Create(
-                    $"https://api.jcdecaux.com/vls/v1/contracts?apiKey=d7cafd31e65fdec0da9453cdbc233b905518e399");
+                    $"https://api.jcdecaux.com/vls/v1/contracts?apiKey={ApiKey}");
             var responseAsync = await webRequest.GetResponseAsync();
             var response = new StreamReader(responseAsync.GetResponseStream()).ReadToEnd();
             Console.WriteLine(response);

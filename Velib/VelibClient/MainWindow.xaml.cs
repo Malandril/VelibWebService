@@ -34,7 +34,6 @@ namespace VelibClient
             velibClient = new ServiceVelib.VelibIntermediaryClient();
             InitializeComponent();
             GetCities();
-            Console.WriteLine("azazazazaz");
             CityName.SelectionChanged += GetSations;
             StationName.TextChanged += (sender, args) =>
             {

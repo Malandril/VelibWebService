@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Calculate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nOp" type="xs:int" />
+        <xs:element minOccurs="0" name="dblNum1" type="xs:double" />
+        <xs:element minOccurs="0" name="dblNum2" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeCalculatedEvent">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeCalculatedEventResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeCalculationFinishedEvent">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeCalculationFinishedEventResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Calculated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nOp" type="xs:int" />
+        <xs:element minOccurs="0" name="dblNum1" type="xs:double" />
+        <xs:element minOccurs="0" name="dblNum2" type="xs:double" />
+        <xs:element minOccurs="0" name="dblResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculationFinished">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

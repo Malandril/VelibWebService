@@ -4,16 +4,10 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/VelibClient" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Velib" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IVelibIntermediary_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="IVelibIntermediary_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
   <wsdl:message name="IVelibIntermediary_GetStations_InputMessage">
     <wsdl:part name="parameters" element="tns:GetStations" />
   </wsdl:message>
@@ -27,10 +21,6 @@
     <wsdl:part name="parameters" element="tns:GetContractsResponse" />
   </wsdl:message>
   <wsdl:portType name="IVelibIntermediary">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IVelibIntermediary/GetData" message="tns:IVelibIntermediary_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IVelibIntermediary/GetDataResponse" message="tns:IVelibIntermediary_GetData_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetStations">
       <wsdl:input wsaw:Action="http://tempuri.org/IVelibIntermediary/GetStations" message="tns:IVelibIntermediary_GetStations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVelibIntermediary/GetStationsResponse" message="tns:IVelibIntermediary_GetStations_OutputMessage" />
@@ -42,15 +32,6 @@
   </wsdl:portType>
   <wsdl:binding name="VelibService" type="tns:IVelibIntermediary">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IVelibIntermediary/GetData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetStations">
       <soap:operation soapAction="http://tempuri.org/IVelibIntermediary/GetStations" style="document" />
       <wsdl:input>
@@ -72,7 +53,7 @@
   </wsdl:binding>
   <wsdl:service name="VelibIntermediary">
     <wsdl:port name="VelibService" binding="tns:VelibService">
-      <soap:address location="http://localhost:8733/Velibo" />
+      <soap:address location="http://localhost:8733/Velib" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

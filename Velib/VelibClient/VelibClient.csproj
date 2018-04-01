@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{79636A4D-AC69-4E18-B6DD-15CCB23EBB8F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>VelibClient</RootNamespace>
     <AssemblyName>VelibClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -108,14 +108,14 @@
     <None Include="Connected Services\ServiceVelib\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceVelib\Velib.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceVelib\VelibClient.ServiceVelib.Contract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceVelib\VelibClient.ServiceVelib.Station.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceVelib\VelibClient.xsd">
-      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Monitoring" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Monitoring?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Monitoring?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Monitoring?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMonitoring_GetNbClientCalls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNbClientCalls" />
+  </wsdl:message>
+  <wsdl:message name="IMonitoring_GetNbClientCalls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNbClientCallsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMonitoring_GetNbDistantRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNbDistantRequest" />
+  </wsdl:message>
+  <wsdl:message name="IMonitoring_GetNbDistantRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNbDistantRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMonitoring_GetNamesOfCachedItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNamesOfCachedItems" />
+  </wsdl:message>
+  <wsdl:message name="IMonitoring_GetNamesOfCachedItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNamesOfCachedItemsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMonitoring">
+    <wsdl:operation name="GetNbClientCalls">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMonitoring/GetNbClientCalls" message="tns:IMonitoring_GetNbClientCalls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMonitoring/GetNbClientCallsResponse" message="tns:IMonitoring_GetNbClientCalls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNbDistantRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMonitoring/GetNbDistantRequest" message="tns:IMonitoring_GetNbDistantRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMonitoring/GetNbDistantRequestResponse" message="tns:IMonitoring_GetNbDistantRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNamesOfCachedItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMonitoring/GetNamesOfCachedItems" message="tns:IMonitoring_GetNamesOfCachedItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMonitoring/GetNamesOfCachedItemsResponse" message="tns:IMonitoring_GetNamesOfCachedItems_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Monitoring" type="tns:IMonitoring">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNbClientCalls">
+      <soap:operation soapAction="http://tempuri.org/IMonitoring/GetNbClientCalls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNbDistantRequest">
+      <soap:operation soapAction="http://tempuri.org/IMonitoring/GetNbDistantRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNamesOfCachedItems">
+      <soap:operation soapAction="http://tempuri.org/IMonitoring/GetNamesOfCachedItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Monitoring">
+    <wsdl:port name="Monitoring" binding="tns:Monitoring">
+      <soap:address location="http://localhost:8733/Monitoring" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
