@@ -13,12 +13,12 @@ namespace ClientEvent
         {
             var inst = new InstanceContext(new VelibEventImpl());
             var velibSubscriberClient = new EventService.VelibSubscriberClient(inst);
-            Console.WriteLine("input station name");
+            Console.WriteLine("input station name in rouen");
             var stationName = Console.ReadLine();
-            Console.WriteLine("input city name");
-            var cityName = Console.ReadLine();
+//            Console.WriteLine("input city name");
+//            var cityName = Console.ReadLine();
 
-            velibSubscriberClient.SubscribeStationChanged(stationName, cityName, 5);
+            velibSubscriberClient.SubscribeStationChanged(stationName, "Rouen", 5);
             Console.ReadLine();
         }
     }

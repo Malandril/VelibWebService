@@ -10,12 +10,13 @@ namespace Velib
 {
     public class VelibSubscriber : IVelibSubscriber
     {
+        static List<Timer> timers = new List<Timer>();
+
         public void SubscribeStationChanged(string stationName, string cityName, int timeInSeconds)
         {
             IVelibEvent subscriber = OperationContext.Current.GetCallbackChannel<IVelibEvent>();
-//            var timer = new System.Threading.Timer(Callback, null, 0, timeInSeconds * 1000);
-            Timer timer = new Timer(_ => Callback(subscriber, stationName, cityName), subscriber, 0,
-                timeInSeconds * 1000);
+            timers.Add(new Timer(_ => Callback(subscriber, stationName, cityName), subscriber, 0,
+                timeInSeconds * 1000));
         }
 
         private void Callback(IVelibEvent subscriber, string stationName, string cityName)
@@ -36,7 +37,7 @@ namespace Velib
             List<Station> stations = JsonConvert.DeserializeObject<List<Station>>(responseFromServer);
             reader.Close();
             response.Close();
-            subscriber.StationChanged(stations.Find(station => station.Name== stationName));
+            subscriber.StationChanged(stations.Find(station => station.Name == stationName));
             Console.WriteLine("LOLOLOLOLOLOL");
         }
     }
