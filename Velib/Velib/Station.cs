@@ -49,5 +49,35 @@ namespace Velib
             return
                 $"{nameof(Number)}: {Number}, {nameof(Name)}: {Name}, {nameof(address)}: {address}, {nameof(position)}: {position}";
         }
+
+        protected bool Equals(Station other)
+        {
+            return Number == other.Number && string.Equals(Name, other.Name) && string.Equals(address, other.address) &&
+                   string.Equals(status, other.status) && bike_stands == other.bike_stands &&
+                   available_bike_stands == other.available_bike_stands && available_bikes == other.available_bikes;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Station) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = Number;
+                hashCode = (hashCode * 397) ^ (Name != null ? Name.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (address != null ? address.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (status != null ? status.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ bike_stands;
+                hashCode = (hashCode * 397) ^ available_bike_stands;
+                hashCode = (hashCode * 397) ^ available_bikes;
+                return hashCode;
+            }
+        }
     }
 }

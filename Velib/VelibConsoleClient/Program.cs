@@ -42,8 +42,6 @@ namespace VelibConsoleClient
                     {
                         Console.WriteLine(contract.name);
                     }
-
-                    Console.WriteLine("KOLOLOLOOO");
                     Console.WriteLine(contracts);
                     break;
                 case "exit":

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.ServiceModel;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -9,7 +10,7 @@ namespace Velib
 {
     public class VelibIntermediary : IVelibIntermediary
     {
-        private const string ApiKey = "d7cafd31e65fdec0da9453cdbc233b905518e399";
+        public const string ApiKey = "d7cafd31e65fdec0da9453cdbc233b905518e399";
         public static List<DateTime> DistantRequests = new List<DateTime>();
         public static List<DateTime> Connections = new List<DateTime>();
 
@@ -63,5 +64,6 @@ namespace Velib
             var contracts = JsonConvert.DeserializeObject<List<Contract>>(response);
             return contracts;
         }
+
     }
 }

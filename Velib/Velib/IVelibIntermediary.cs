@@ -12,5 +12,6 @@ namespace Velib
 
         [OperationContract]
         Task<List<Contract>> GetContracts();
+
     }
 }

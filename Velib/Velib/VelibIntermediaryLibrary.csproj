@@ -65,11 +65,14 @@
     <Compile Include="Caching.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="IMonitoring.cs" />
+    <Compile Include="IVelibEvent.cs" />
     <Compile Include="IVelibIntermediary.cs" />
+    <Compile Include="IVelibSubscriber.cs" />
     <Compile Include="Monitoring.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Station.cs" />
     <Compile Include="VelibIntermediary.cs" />
+    <Compile Include="VelibSubscriber.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9554DE7B-0F30-4C46-8EE9-F0CBEA711EB3}</ProjectGuid>
+    <ProjectGuid>{D6EE226B-7F12-46D0-85A4-62D4BB33BB83}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>VelibConsoleClient</RootNamespace>
-    <AssemblyName>VelibConsoleClient</AssemblyName>
+    <RootNamespace>ClientEvent</RootNamespace>
+    <AssemblyName>ClientEvent</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,50 +44,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServiceVelib\Reference.cs">
+    <Compile Include="Connected Services\EventService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VelibEventImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\ServiceVelib\Arrays.xsd">
+    <None Include="Connected Services\EventService\Event.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceVelib\service.wsdl" />
-    <None Include="Connected Services\ServiceVelib\service.xsd">
+    <None Include="Connected Services\EventService\Event1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceVelib\service1.xsd">
+    <None Include="Connected Services\EventService\Event2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceVelib\Velib.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceVelib\VelibConsoleClient.ServiceVelib.Contract.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceVelib\VelibConsoleClient.ServiceVelib.Station.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+    <None Include="Connected Services\EventService\VelibSubscriber.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceVelib\" />
+    <WCFMetadataStorage Include="Connected Services\EventService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceVelib\configuration91.svcinfo" />
+    <None Include="Connected Services\EventService\Event.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceVelib\configuration.svcinfo" />
+    <None Include="Connected Services\EventService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceVelib\Reference.svcmap">
+    <None Include="Connected Services\EventService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EventService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
